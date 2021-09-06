@@ -1,0 +1,7 @@
+[
+    {
+        "titulo": "Titulo Revista",
+        "autor": "Pepito Mora",
+        "cuerpo" : "<strong>Primera parte</strong>  <br> Esta es una prueba <a href='https://www.nacion.com/'> Noticias </a> "
+    }
+]

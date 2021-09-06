@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import  { useState, useEffect } from 'react';
+
+const cargarDatos = async ()=> {
+  let res = await fetch ("./data/revistas.json");
+  res = await res.json();  
+  console.log(res);
+  return res;
+}
+
 
 function App() {
+
+const revistas = cargarDatos();
+console.log(revistas);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <h1>Test</h1>
+  )
+
+
+
+};
+
 
 export default App;
