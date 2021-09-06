@@ -1,4 +1,5 @@
 import  { useState, useEffect } from 'react';
+import Iframe from './componentes/Iframe';
 
 
 
@@ -26,10 +27,12 @@ import  { useState, useEffect } from 'react';
 
   return (
     <div className="container">
-        <h1>Test</h1>
+        <h1>Test</h1> 
         {
-          revistas[0].cuerpo
-        }
+          revistas &&
+          <Iframe content={ revistas[0].titulo + "<hr>" + revistas[0].autor +   revistas[0].cuerpo} />
+        }      
+        
     </div>
   )
 

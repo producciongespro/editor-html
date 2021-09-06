@@ -1,7 +1,7 @@
 [
     {
-        "titulo": "Titulo Revista",
-        "autor": "Pepito Mora",
+        "titulo": "<h1> Titulo Revista </h1>",
+        "autor": "<p> Pepito Mora </p>",
         "cuerpo" : "<strong>Primera parte</strong>  <br> Esta es una prueba <a href='https://www.nacion.com/'> Noticias </a> "
     }
 ]
