@@ -1,21 +1,16 @@
-import  { useState, useEffect } from 'react';
-import Iframe from './componentes/Iframe';
+import { useState, useEffect } from "react";
+import Visor from "./componentes/Visor";
 
-
-
-
- function App() {
-
-
+function App() {
   const [revistas, setRevistas] = useState(null);
 
-  const cargarDatos = async ()=> {
-    let res = await fetch ("./data/revistas.json");
-    res = await res.json();    
+  const cargarDatos = async () => {
+    let res = await fetch("./data/revistas.json");
+    res = await res.json();
     setRevistas(res);
-  }
+  };
 
-  useEffect(()  =>  {
+  useEffect(() => {
     cargarDatos();
   }, []);
 
@@ -23,22 +18,19 @@ import Iframe from './componentes/Iframe';
     console.log(revistas);
   }, [revistas]);
 
-
-
   return (
     <div className="container">
-        <h1>Test</h1> 
-        {
-          revistas &&
-          <Iframe content={ revistas[0].titulo + "<hr>" + revistas[0].autor +   revistas[0].cuerpo} />
-        }      
-        
+      <div className="row">
+        <div className="col-8">
+        <h1>Test Descarga HTML</h1>
+        </div>
+        <div className="col-4">
+          <button></button>
+        </div>
+      </div>
+      {revistas && <Visor item={revistas[0]} />}
     </div>
-  )
-
-
-
-};
-
+  );
+}
 
 export default App;
