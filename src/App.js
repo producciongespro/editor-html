@@ -1,22 +1,6 @@
 import { useState, useEffect } from "react";
-import { saveAs } from 'file-saver';
+import { saveAs } from "file-saver";
 import Visor from "./componentes/Visor";
-
-
-
-const handleDownload =()=> {
-  var content = "<h1>Hola</h1> Esta es una prueba";
-  var filename = "revista.html";
-
-var blob = new Blob([content], {
- type: "text/html;charset=utf-8"
-});
-
-saveAs(blob, filename);
-
-}
-
-
 
 function App() {
   const [revistas, setRevistas] = useState(null);
@@ -35,17 +19,29 @@ function App() {
     console.log(revistas);
   }, [revistas]);
 
+  const handleDownload = () => {
+    const item = revistas[0];
+    const content = item.titulo + "<hr>" + item.autor + item.cuerpo;
+    const filename = "revista.html";
 
+    var blob = new Blob([content], {
+      type: "text/html;charset=utf-8",
+    });
 
+    saveAs(blob, filename);
+  };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-8">
-        <h1>Test Descarga HTML</h1>
+          <h1>Test Descarga HTML</h1>
         </div>
         <div className="col-4">
-          <button className="btn btn-success" onClick={handleDownload} > Descargar HTML </button>
+          <button className="btn btn-success" onClick={handleDownload}>
+            {" "}
+            Descargar HTML{" "}
+          </button>
         </div>
       </div>
       {revistas && <Visor item={revistas[0]} />}
