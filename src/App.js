@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import Visor from "./componentes/Visor";
 import Indice from "./componentes/Indice";
 
+const API_ARTICULOS = "http://localhost:3500/api/articulos";
+
 function App() {
   const [revistas, setRevistas] = useState(null);  
   const [vistaActual, setVistaActual] = useState(null);
 
   const cargarDatos = async () => {
-    let res = await fetch("./data/revistas.json");
+    let res = await fetch(API_ARTICULOS);
     res = await res.json();
     setRevistas(res);
   };
