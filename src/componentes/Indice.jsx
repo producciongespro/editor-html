@@ -11,7 +11,7 @@ export default function Indice(props) {
             className="list-group-item list-group-item-action"
             onClick={props.handleMostrarDetalle}
           >
-            {item.nombre}
+            {item.titulo}
           </button>
         ))}
       </div>

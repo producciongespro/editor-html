@@ -1,23 +1,26 @@
 [
     {
-        "id": "1",
-        "nombre": "Caminando hacia la luz",
-        "titulo": "<h1> Caminando hacia la luz </h1>",
-        "autor": "<p> Pepito Mora </p>",
+        "id": "1",        
+        "titulo": "Caminando hacia la luz",
+        "volumen": "13 N°2 Junio",
+        "anno": "2021",
+        "autor": "Pepito Mora",
         "cuerpo": "<strong>Primera parte</strong>  <br> Esta es una prueba <a href='https://www.nacion.com/'> Noticias </a> "
     },
     {
-        "id": "2",
-        "nombre": "Unidos por el cambio",
-        "titulo": "<h1> Unidos por el cambio </h1>",
-        "autor": "<p> Lola Flores </p>",
+        "id": "2",        
+        "titulo": "Unidos por el cambio",
+        "volumen": "14 N°3 Junio",
+        "anno": "2021",
+        "autor": "Lola Flores",
         "cuerpo": "<p>Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. </p>        Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.        Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede."
     },
     {
-        "id": "3",
-        "nombre": "Unete a la revolución",
-        "titulo": "<h1> Unete a la revolución </h1>",
-        "autor": "<p> Enrique Iglesias </p>",
+        "id": "3",        
+        "titulo": "Unete a la revolución",
+        "volumen": "1 N°2 Octubre",
+        "anno": "2020",
+        "autor": "Enrique Iglesias",
         "cuerpo": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy."
     }
 ]

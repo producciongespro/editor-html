@@ -17,8 +17,8 @@ export default function Visor(props) {
 
   return (
     <>
-      <div className="row">
-        <div className="col-8">Detalle Revista  <strong> {item.nombre} </strong> </div>
+      <div className="row mb-2">
+        <div className="col-8">Detalle Revista  <strong> {item.titulo} </strong> </div>
         <div className="col-2">
           <button className="btn btn-outline-info" 
           onClick={handleDownload}>
@@ -35,7 +35,7 @@ export default function Visor(props) {
       <div className="row">
         <div className="col-sm-12">
           {item && (
-            <Iframe content={item.titulo + "<hr>" + item.autor + item.cuerpo} />
+            <Iframe item={item} />
           )}
         </div>
       </div>
