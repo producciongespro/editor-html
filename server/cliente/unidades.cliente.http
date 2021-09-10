@@ -1,0 +1,11 @@
+### get unidades por usuario
+GET http://localhost:3500/api/unidades-usuario?idUsr=123
+
+### update unidad
+PUT http://localhost:3500/api/unidades-usuario?_id=60fa31423d0bf9febc302e90 
+Content-Type: application/json
+
+{
+    "id": "4",
+    "activo": false
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "idUsr": "123",
+    "objetos": [
+      {
+        "idObjeto": "1",
+        "nombre": "Las sandalias",
+        "descripcion": "Recibe las sandalias del peregrino, pues hoy inicia tu caminar hacia una vida plena en la fe.",
+        "activo" : true,
+        "visto" : true
+      },
+      {
+        "idObjeto": "2",
+        "nombre": "Estrella",
+        "descripcion": "Simboliza el crecimiento como persona y el paso que ha dado en autoestima y aceptación personal.",
+        "activo" : false,
+        "visto" : false
+      },
+      {
+        "idObjeto": "3",
+        "nombre": "Cruz",
+        "descripcion": "Símbolo de haberle recibido en el corazón y como mandato de tomar la cruz y seguirle. Ahora el paisaje de fondo del avatar tomará forma de",
+        "activo" : true,
+        "visto" : false
+      },
+      {
+        "idObjeto": "4",
+        "nombre": "Las Paloma",
+        "descripcion": "Símbolo del Espíritu Santo que habita en él por el bautismo, al recibir la paloma la cruz que carga sobre sus hombros",
+        "activo" : false,
+        "visto" : false
+      },
+      {
+        "idObjeto": "5",
+        "nombre": "El agua y el aceite",
+        "descripcion": "Símbolos de la gracia sacramental, con el agua limpiará la suciedad que tenía hasta ahora.",
+        "activo" : false,
+        "visto" : false
+      },
+      {
+        "idObjeto": "6",
+        "nombre": "El fuego",
+        "descripcion": "No disponible",
+        "activo" : false,
+        "visto" : false
+      }
+
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "idUsr": "123",
+        "tipo": "",
+        "traje": "",
+        "sexo": "hombre",
+        "fase": 0
+    },
+    {
+        "idUsr": "456",
+        "tipo": "2",
+        "traje": "biblico",
+        "sexo": "hombre",
+        "fase": 1
+    },
+    {
+        "idUsr": "789",
+        "tipo": "3",
+        "traje": "pijama",
+        "sexo": "mujer",
+        "fase": 1
+    }
+]

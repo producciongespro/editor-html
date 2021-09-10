@@ -1,0 +1,31 @@
+### get avatar por usuario (Hombre)
+GET http://localhost:3500/api/avatar-usuario?idUsr=123
+
+
+
+### update avatar
+PUT http://localhost:3500/api/avatar-usuario?idUsr=123
+Content-Type: application/json
+
+{
+    "traje": "Scout",  
+    "tipo": "2",
+    "fase": 1
+}
+
+
+
+### get avatar por usuario (Mujer)
+GET http://localhost:3500/api/avatar-usuario?idUsr=789
+
+
+
+### update avatar (Mujer)
+PUT http://localhost:3500/api/avatar-usuario?idUsr=789
+Content-Type: application/json
+
+{
+    "traje": "Gala",  
+    "tipo": "2",
+    "fase": 1
+}
