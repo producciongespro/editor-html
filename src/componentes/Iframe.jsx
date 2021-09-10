@@ -1,52 +1,7 @@
 import React from 'react';
 
 const Iframe = (props) => {
-  const item= props.item;
-
-  const content = `
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="${item.autor}">
-    <title>Revista Conexiones - ${item.titulo}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-  </head>
-  <body>
-
-
-
-  <div className="row mb-4">
-    <div className="alert  alert-secondary">
-        <div class="col-6" >
-          Revista Conexiones
-        </div>
-        <div className="col-6">
-          Volumen: ${item.volumen} ${item.anno}
-        </div>
-    </div>  
-  </div>
-
-  <div className="row mb-2">
-    <div className="col-12">
-      <h2> ${item.titulo} </h2>
-      <p> <strong> Por: </strong> ${item.autor} </p>
-    </div>
-  </div>  
-  
-  <div className="row">
-  <div className="col-12">
-    ${item.cuerpo}    
-  </div>
-</div> 
-
-
-</body>
-</html>
-  `
-    
-
+  const content= props.content;
 
    let iframe_ref = null;
    const writeHTML = (frame) => {

@@ -1,26 +1,34 @@
 [
-    {
-        "id": "1",        
-        "titulo": "Caminando hacia la luz",
-        "volumen": "13 N°2 Junio",
-        "anno": "2021",
-        "autor": "Pepito Mora",
-        "cuerpo": "<strong>Primera parte</strong>  <br> Esta es una prueba <a href='https://www.nacion.com/'> Noticias </a> "
-    },
-    {
-        "id": "2",        
-        "titulo": "Unidos por el cambio",
-        "volumen": "14 N°3 Junio",
-        "anno": "2021",
-        "autor": "Lola Flores",
-        "cuerpo": "<p>Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. </p>        Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.        Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede."
-    },
-    {
-        "id": "3",        
-        "titulo": "Unete a la revolución",
-        "volumen": "1 N°2 Octubre",
-        "anno": "2020",
-        "autor": "Enrique Iglesias",
-        "cuerpo": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy."
-    }
+  {
+    "id": "1",
+    "titulo": "Caminando hacia la luz",
+    "volumen": "13 N°2 Junio",
+    "anno": "2021",
+    "autor": "Pepito Mora",
+    "cuerpo": "<strong>Primera parte</strong>  <br> Esta es una prueba <a href='https://www.nacion.com/'> Noticias </a> "
+  },
+  {
+    "id": "2",
+    "titulo": "Unidos por el cambio",
+    "volumen": "14 N°3 Junio",
+    "anno": "2021",
+    "autor": "Lola Flores",
+    "cuerpo": "<p>Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. </p>        Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.        Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede."
+  },
+  {
+    "id": "3",
+    "titulo": "Unete a la revolución",
+    "volumen": "1 N°2 Octubre",
+    "anno": "2020",
+    "autor": "Enrique Iglesias",
+    "cuerpo": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy."
+  },
+  {
+    "id": "4",
+    "titulo": "Práctica Profesional Supervisada en Orientación. Una experiencia para crecimiento profesiones y personal",
+    "volumen": "13 N°2 Junio",
+    "anno": "2021",
+    "autor": "Juan Ortega Rojas, Evelyn Vargas Hernández, Daniela Calvo Mondragón",
+    "cuerpo": "<h4>Introducción</h4>        <p>          La investigación realizada por la Comisión de Práctica Profesional          Supervisada (CPPSO), propuso conocer las implicaciones tanto a nivel          profesional como a nivel personal de la PPSO, además de fortalecer          el trabajo que se ha venido desarrollando desde la Comisión. Dio          inicio con la identificación, dentro de los informes finales de          práctica entregados durante la II Fase del AAPP, de elementos          esenciales referidos a pensamientos y sentires con relación al          proceso vivenciado. Se seleccionaron de forma intencionada 15          informes presentados durante el año 2015 hasta el 2017,          (distribuidos de la siguiente forma: 6 informes del 2015,        4 informes          del 2016 y otros 5 del 2017); no se incluyen los años 2018 y 2019 ya          que fueron los períodos en que se realizó el estudio.        </p>        <p>          De esta forma la metodología fue básicamente descriptiva utilizando          como fuente de información dichos informes, junto a la consulta de          documentos sobre prácticas profesionales supervisadas que          favorecieran el análisis de los datos a la luz de la teoría y de los          informes de la CPPSO descritos en el Sistema de Información          Académica de la Universidad Nacional (SIA) para los años 2015,        2016          y 2017.        </p>        <h3>Antecedentes</h3>        <p>          En el año 2019 la carrera de Orientación cumplió 46 años de          impartirse en la Universidad Nacional de Costa Rica, graduando a          bachilleres y licenciados(as) bajo los principios de creación de la          universidad necesaria; lema con el cual nace esta casa de estudios          superiores.        </p>        <p>          De acuerdo con Calderón, et al (2006) la carrera «nació con la          Universidad Nacional en el año 1973» (p.14), a partir de lo cual se          ha venido consolidando una formación centrada en principios          humanistas. Casi 50 años de graduar profesionales, la principal          evidencia de una carrera consolidada a nivel universitario, que          sigue vigente en tanto es una importante disciplina para el          desarrollo del país.        </p>        <p>          Cabe mencionar que hasta el año 2000 el título que se otorgaba era          el de Ciencias de la Educación con énfasis en Orientación. A partir          de ese año (2021) se cambia el enfoque de la carrera a Orientación y          el título otorgado responde a este cambio. La principal razón de          esta transformación obedece a la idea de diversificar la labor de la          persona profesional de la orientación a otros escenarios laborales          aparte de las instituciones de educación formal representadas por el          Ministerio de Educación Pública.        </p>        <p>          Hasta este momento las prácticas profesionales supervisadas se          realizaban principalmente en escenarios educativos, motivo por el          cual se inicia con el proceso de incorporar practicantes en otras          instituciones formales y organizaciones no gubernamentales. En la          Universidad Nacional las prácticas profesionales supervisadas están          amparadas dentro de la normativa vigente. Lo anterior se puede          encontrar en la página web (https: //www.una.ac.cr/) de la          Universidad Nacional (UNA), donde se hace referencia a una          publicación de la GACETA del 29 de mayo del año 2017, en el cual indica que la Práctica Profesional Supervisada forma parte de los          acuerdos aprobados por la Universidad Nacional en su Segundo          Congreso, la cual se desarrolla al amparo del artículo 200 inciso D          del Estatuto Orgánico de 1993. Para coadyuvar a su implementación,          el Consejo Universitario, en abril de 1998, aprobó una serie de          Políticas y Lineamientos en esta materia.;        </p>        <h3>Práctica Profesional Supervisada en Orientación</h3>        <p>          Se considera que la Práctica Profesional Supervisada (PPS)          contribuye a consolidar los conocimientos y destrezas adquiridas por          la población estudiantil, así como al desarrollo de actitudes y          valores. Es una experiencia que realiza el estudiante en un ámbito          específico de aplicación en su especialidad disciplinaria o          profesional, y a su vez, un espacio de aprendizaje que posibilita su          proyección social y el establecimiento de relaciones teóricas,          metodológicas y técnicas con la realidad. Todo lo cual concurre a la          formación integral del estudiante.<br />          En el contexto anterior, la Universidad Nacional (UNA), en el diseño          curricular de sus planes de estudio, contempla la PPS de forma tal          que:        </p>        <ol>          <li>            Contribuye con la formación de profesionales con excelencia            académica, críticos, creativos y comprometidos con un desarrollo            social, económico y cultural, centrado en el ser humano.          </li>          <li>            Responde a las necesidades sociales, científicas, artísticas y            culturales de la sociedad costarricense y regional.          </li>          <li>            Establece dentro de las prioridades institucionales la dotación de            los recursos necesarios para su ejecución.          </li>          <li>            Informa a la población estudiantil de los programas y proyectos            donde se realizará la PPS.          </li>          <li>            Garantiza su cumplimiento obligatorio en todos los estudiantes del            nivel de bachillerato universitario o en su defecto de            licenciatura, si no cuenta con el grado académico de bachiller.          </li>          <li>            Fomenta la interdisciplinariedad y multidisciplinariedad            académicas en el desarrollo y ejecución de la PPS. Entre otros            aspectos propios.          </li>        </ol>        <p>          En el caso específico de la carrera de Orientación no es sino hasta          el año 2010 cuando se consolida la práctica profesional supervisada          como una Actividad Académica Permanente inscrita en el Sistema de          Información Académica (SIA) de la Universidad Nacional.        </p>"
+  }
 ]
