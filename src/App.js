@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { saveAs } from "file-saver";
 import Visor from "./componentes/Visor";
 import Indice from "./componentes/Indice";
 
-
 function App() {
-  const [revistas, setRevistas] = useState(null);
+  const [revistas, setRevistas] = useState(null);  
+  const [vistaActual, setVistaActual] = useState(null);
 
   const cargarDatos = async () => {
     let res = await fetch("./data/revistas.json");
@@ -19,36 +18,43 @@ function App() {
 
   useEffect(() => {
     console.log("revistas cargadas--->", revistas);
+    if (revistas) {
+      setVistaActual(
+        <Indice 
+          array={revistas} 
+          handleMostrarDetalle={handleMostrarDetalle} 
+          handleMostrarIndice={handleMostrarIndice}
+          />
+      );
+    }
   }, [revistas]);
 
-  const handleDownload = () => {
-    const item = revistas[2];
-    const content = item.titulo + "<hr>" + item.autor + item.cuerpo;
-    const filename = "revista.html";
 
-    var blob = new Blob([content], {
-      type: "text/html;charset=utf-8",
-    });
+  const handleMostrarDetalle =(e)=> {
+    const i = e.target.id;
+    setVistaActual(
+      <Visor  item= { revistas[i] } />
+    )
+  }
 
-    saveAs(blob, filename);
-  };
+  const handleMostrarIndice =()=> {
+    setVistaActual(
+      <Indice 
+        array={revistas} 
+        handleMostrarDetalle={handleMostrarDetalle} 
+        handleMostrarIndice={handleMostrarIndice}
+        />
+    );
+  }
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-8">
+      <div className="row mb-4">
+        <div className="col-12 text-center">
           <h1>Test Descarga HTML</h1>
         </div>
-        <div className="col-4">
-          <button className="btn btn-success" onClick={handleDownload}>
-            Descargar HTML
-          </button>
-        </div>
-      </div>      
-          {
-            revistas &&
-            <Indice array = {revistas}  />
-          }
+      </div>
+      {vistaActual}
     </div>
   );
 }
