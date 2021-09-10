@@ -1,13 +1,4 @@
 
-### get objetos por usuario
-GET http://localhost:3500/api/objetos-usuario?idUsr=123
+### get Artícuos
+GET http://localhost:3500/api/articulos
 
-### Actualizar objeto
-PUT http://localhost:3500/api/objetos-usuario?idUsr=123
-Content-Type: application/json
-
-{
-    "idObjeto": "2",       
-    "activo" : false,
-    "visto" : false  
-}
