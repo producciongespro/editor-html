@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { saveAs } from "file-saver";
 import Visor from "./componentes/Visor";
+import Indice from "./componentes/Indice";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   const [revistas, setRevistas] = useState(null);
@@ -16,7 +18,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(revistas);
+    console.log("revistas cargadas--->", revistas);
   }, [revistas]);
 
   const handleDownload = () => {
@@ -38,12 +40,30 @@ function App() {
           <h1>Test Descarga HTML</h1>
         </div>
         <div className="col-4">
-          <button className="btn btn-success" onClick={handleDownload}>            
+          <button className="btn btn-success" onClick={handleDownload}>
             Descargar HTML
           </button>
         </div>
-      </div>
-      {revistas && <Visor item={revistas[2]} />}
+      </div>      
+        <Router>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/indice">Indice</Link>
+            </li>
+            <li>
+              <Link to="/topics">Topics</Link>
+            </li>
+          </ul>
+
+          <Switch>
+            <Route path="indice">
+              <Indice array={revistas} />
+            </Route>
+          </Switch>
+        </Router>      
     </div>
   );
 }
