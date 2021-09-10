@@ -22,8 +22,7 @@ function App() {
       setVistaActual(
         <Indice 
           array={revistas} 
-          handleMostrarDetalle={handleMostrarDetalle} 
-          handleMostrarIndice={handleMostrarIndice}
+          handleMostrarDetalle={handleMostrarDetalle}          
           />
       );
     }
@@ -33,16 +32,19 @@ function App() {
   const handleMostrarDetalle =(e)=> {
     const i = e.target.id;
     setVistaActual(
-      <Visor  item= { revistas[i] } />
+      <Visor  
+        item= { revistas[i] }  
+        handleMostrarIndice={handleMostrarIndice}
+        />
     )
   }
 
   const handleMostrarIndice =()=> {
+    console.log("Mostrando indice");
     setVistaActual(
       <Indice 
         array={revistas} 
-        handleMostrarDetalle={handleMostrarDetalle} 
-        handleMostrarIndice={handleMostrarIndice}
+        handleMostrarDetalle={handleMostrarDetalle}         
         />
     );
   }
