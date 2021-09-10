@@ -20,7 +20,7 @@ function App() {
   }, [revistas]);
 
   const handleDownload = () => {
-    const item = revistas[0];
+    const item = revistas[2];
     const content = item.titulo + "<hr>" + item.autor + item.cuerpo;
     const filename = "revista.html";
 
@@ -38,13 +38,12 @@ function App() {
           <h1>Test Descarga HTML</h1>
         </div>
         <div className="col-4">
-          <button className="btn btn-success" onClick={handleDownload}>
-            {" "}
-            Descargar HTML{" "}
+          <button className="btn btn-success" onClick={handleDownload}>            
+            Descargar HTML
           </button>
         </div>
       </div>
-      {revistas && <Visor item={revistas[0]} />}
+      {revistas && <Visor item={revistas[2]} />}
     </div>
   );
 }
