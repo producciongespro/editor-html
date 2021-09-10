@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { saveAs } from "file-saver";
 import Visor from "./componentes/Visor";
 import Indice from "./componentes/Indice";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 function App() {
   const [revistas, setRevistas] = useState(null);
@@ -45,25 +45,10 @@ function App() {
           </button>
         </div>
       </div>      
-        <Router>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/indice">Indice</Link>
-            </li>
-            <li>
-              <Link to="/topics">Topics</Link>
-            </li>
-          </ul>
-
-          <Switch>
-            <Route path="indice">
-              <Indice array={revistas} />
-            </Route>
-          </Switch>
-        </Router>      
+          {
+            revistas &&
+            <Indice array = {revistas}  />
+          }
     </div>
   );
 }
