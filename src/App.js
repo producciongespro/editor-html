@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Visor from "./componentes/Visor";
 import Indice from "./componentes/Indice";
+import Editor from "./componentes/Editor";
 
 const API_ARTICULOS = "http://localhost:3500/api/articulos";
 
@@ -46,6 +47,15 @@ function App() {
     setVistaActual(
       <Indice 
         array={revistas} 
+        handleMostrarIndice={handleMostrarIndice}        
+        />
+    );
+  }
+
+  const handleMostrarEditor =()=> {
+    console.log("Mostrando editor");
+    setVistaActual(
+      <Editor         
         handleMostrarDetalle={handleMostrarDetalle}         
         />
     );
@@ -53,9 +63,12 @@ function App() {
 
   return (
     <div className="container">
-      <div className="row mb-4">
-        <div className="col-12 text-center">
+      <div className="row mb-4 pt-2">
+        <div className="col-8 text-center">
           <h1>Test Descarga HTML</h1>
+        </div>
+        <div className="col-4">
+          <button className="btn btn-outline-info" onClick={handleMostrarEditor} > Editor </button>
         </div>
       </div>
       {vistaActual}
