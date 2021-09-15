@@ -4,8 +4,8 @@ import * as utils from "../utils/utils";
 export default function Editor(props) {
   const refContainer = useRef(null);
 
-  const handleSetHeader = (e) => {       
-    utils.setHeader(e.currentTarget.id, refContainer );
+  const handleSetHeader = (e) => {
+    utils.setHeader(e.currentTarget.id, refContainer);
   };
 
   return (
@@ -24,16 +24,36 @@ export default function Editor(props) {
           >
             H1
           </button>
-          <button id="h2"  onClick={handleSetHeader} type="button" className="btn btn-outline-primary">
+          <button
+            id="h2"
+            onClick={handleSetHeader}
+            type="button"
+            className="btn btn-outline-primary"
+          >
             H2
           </button>
-          <button id="h3"  onClick={handleSetHeader} type="button" className="btn btn-outline-primary">
+          <button
+            id="h3"
+            onClick={handleSetHeader}
+            type="button"
+            className="btn btn-outline-primary"
+          >
             H3
           </button>
-          <button id="P"  onClick={handleSetHeader} type="button" className="btn btn-outline-secondary">
+          <button
+            id="P"
+            onClick={handleSetHeader}
+            type="button"
+            className="btn btn-outline-secondary"
+          >
             P
           </button>
-          <button id="BOLD"  onClick={handleSetHeader} type="button" className="btn btn-outline-secondary">
+          <button
+            id="BOLD"
+            onClick={handleSetHeader}
+            type="button"
+            className="btn btn-outline-secondary"
+          >
             <strong>N</strong>
           </button>
         </div>
@@ -41,31 +61,15 @@ export default function Editor(props) {
 
       <div className="row">
         <div className="col-sm-12">
-
-            <div className="alert" contentEditable={true}   ref={refContainer} >
-                <h1>Esto es una prueba</h1>
-            </div>
-          
-          {
-              /*
-
-              <textarea
+          <textarea
             className="form-control"
             ref={refContainer}
             id="txtEditor"
             cols="30"
             rows="10"
           ></textarea>
-
-              */
-          }
-
-
-
         </div>
       </div>
-
-
     </>
   );
 }

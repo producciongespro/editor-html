@@ -1,6 +1,8 @@
 export function setHeader (id, ref  ) {
 
-  console.log(window.getSelection().toString());
+  const selObj= window.getSelection().toString();  
+  const  selRange = selObj.getRangeAt(0);
+  console.log(selRange);
 
   /*
     const openTag =  `<${id}>`;
