@@ -21,7 +21,7 @@ const handleSendData = async () => {
 
 }
 
-export default function CustomEditor(props) {
+export default function Editor(props) {
   return (
     <div className="container">
       <div className="row">
