@@ -1,4 +1,16 @@
 
-### get Artícuos
+### get Artículos
 GET http://localhost:3500/api/articulos
+
+### set artículos
+POST http://localhost:3500/api/articulos
+Content-Type: application/json
+
+{
+    "titulo": "Prueba 123", 
+    "volumen": "147", 
+    "anno": "2021", 
+    "autor": "Pepito", 
+    "cuerpo": "<h1>Hola a todos</h1>"
+}
 
