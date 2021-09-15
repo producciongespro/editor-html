@@ -1,30 +1,16 @@
-export function setHeader (id, ref  ) {
 
+export async function sendData ({URL_API, titulo, volumen, anno, autor, cuerpo}) {
 
-
-    const openTag =  `<${id}>`;
-    const closeTag = `</${id}>`;
-    const txtEditor = ref.current;
-    const start = txtEditor.selectionStart;
-    // obtain the index of the last selected character
-    const finish = txtEditor.selectionEnd;
-
-    let texto = txtEditor.value;
-    const output1 = [
-      texto.slice(0, finish),
-      closeTag,
-      texto.slice(finish),
-    ].join("");
-    const output2 = [
-      output1.slice(0, start),
-      openTag,
-      output1.slice(start),
-    ].join("");
-
-    //console.log(output1);
-    console.log(output2);
-    txtEditor.value = output2;
-
+  const data = { titulo, volumen, anno, autor, cuerpo  }
+  const resp = await fetch(URL_API, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+  let json= await resp.json();
+    return json;
   
 
 }

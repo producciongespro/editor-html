@@ -9,7 +9,9 @@ export async function getArticulos(req, res) {
 
 export async function setArticulos(req, res) {      
     const {titulo, volumen, anno, autor, cuerpo} = req.body;
-    console.log(cuerpo);    
+    const nuevoArticulo = new Articulo({titulo, volumen, anno, autor, cuerpo});
+    await nuevoArticulo.save();
+    
 
     res.json({isOk:true});
 }

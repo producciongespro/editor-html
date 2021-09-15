@@ -1,12 +1,34 @@
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
+import * as utils from "../utils/utils";
+
+const URL_API = "http://localhost:3500/api/articulos";
+
+let cuerpo;
+
+
+const handleSendData = async () => {
+  const datos = {URL_API,  
+    titulo: "prueba 123", 
+    volumen: "123", 
+    anno: 2021, 
+    autor: "Pepito Mora", 
+    cuerpo  }
+
+  const res = await utils.sendData(datos);
+  console.log(res);
+
+}
+
 export default function CustomEditor(props) {
   return (
     <div className="container">
       <div className="row">
         <div className="col-12 text-end mt-2 mb-2">
-          <button className="btn btn-outline-success"> 💾 </button>
+          <button 
+          onClick={handleSendData}
+          className="btn btn-outline-success"> 💾 </button>
         </div>
       </div>
 
@@ -21,6 +43,7 @@ export default function CustomEditor(props) {
           const data = editor.getData();
           //console.log( { event, editor, data } );
           console.log(data);
+          cuerpo=data;
         }}
         onBlur={(event, editor) => {
           // console.log( 'Blur.', editor );
