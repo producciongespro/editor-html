@@ -1,10 +1,7 @@
 export function setHeader (id, ref  ) {
 
-  const selObj= window.getSelection().toString();  
-  const  selRange = selObj.getRangeAt(0);
-  console.log(selRange);
 
-  /*
+
     const openTag =  `<${id}>`;
     const closeTag = `</${id}>`;
     const txtEditor = ref.current;
@@ -28,6 +25,6 @@ export function setHeader (id, ref  ) {
     console.log(output2);
     txtEditor.value = output2;
 
-    */
+  
 
 }
