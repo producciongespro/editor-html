@@ -1,5 +1,8 @@
 export function setHeader (id, ref  ) {
 
+  console.log(window.getSelection().toString());
+
+  /*
     const openTag =  `<${id}>`;
     const closeTag = `</${id}>`;
     const txtEditor = ref.current;
@@ -9,7 +12,7 @@ export function setHeader (id, ref  ) {
 
     let texto = txtEditor.value;
     const output1 = [
-      texto.slice(0, finish - 1),
+      texto.slice(0, finish),
       closeTag,
       texto.slice(finish),
     ].join("");
@@ -22,5 +25,7 @@ export function setHeader (id, ref  ) {
     //console.log(output1);
     console.log(output2);
     txtEditor.value = output2;
+
+    */
 
 }
