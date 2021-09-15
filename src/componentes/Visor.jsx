@@ -27,7 +27,7 @@ export default function Visor(props) {
               <div class="alert alert-secondary">
                 <div class="col-12">
                   <h1>Revista Conexiones</h1>
-                  Volumen: ${item.volumen} ${item.anno}
+                  Volumen: ${item.volumen} ${item.anno} ISSN: 1659-4487
                 </div>
               </div>
             </div>
