@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Visor from "./componentes/Visor";
 import Indice from "./componentes/Indice";
-import Editor from "./componentes/Editor";
+import CustomEditor from "./componentes/CustomEditor";
 
 const API_ARTICULOS = "http://localhost:3500/api/articulos";
 
@@ -55,8 +55,8 @@ function App() {
   const handleMostrarEditor =()=> {
     console.log("Mostrando editor");
     setVistaActual(
-      <Editor         
-        handleMostrarDetalle={handleMostrarDetalle}         
+      <CustomEditor         
+        
         />
     );
   }
