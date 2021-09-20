@@ -1,9 +1,13 @@
 
-export async function sendData ({URL_API, titulo, volumen, anno, autor, cuerpo}) {
+export async function sendData ({URL_API, method, titulo, volumen, anno, autor, cuerpo}, _id) {
+
+  if (_id) {
+    URL_API = URL_API+"?_id="+_id;
+  }
 
   const data = { titulo, volumen, anno, autor, cuerpo  }
   const resp = await fetch(URL_API, {
-    method: "POST",
+    method: method,
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",

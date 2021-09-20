@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
@@ -12,7 +12,7 @@ let cuerpo;
 
 
 
-export default function Editor(props) {
+export default function Editor(props) {  
 
   const edicion= props.edicion;
   const item= props.item;
@@ -22,18 +22,51 @@ export default function Editor(props) {
   const inputAutor = useRef(null);
   const inputAnno = useRef(null);
 
+
+  useEffect(() => {
+    renderInfo();
+  }, []);
+
   const handleSendData = async () => {
-    const datos = {URL_API,  
+    let method;
+    let _id;
+
+    if (edicion) {
+      method = "PUT"
+    } else {
+      method = "POST"
+    }
+
+    if (item) {
+     _id = item._id 
+    }
+
+    const datos = {
+      URL_API,
+      method,  
       titulo: inputTitulo.current.value, 
       volumen: inputVolumen.current.value, 
       anno: inputAnno.current.value, 
       autor: inputAutor.current.value, 
       cuerpo  }
   
-    const res = await utils.sendData(datos);
+    const res = await utils.sendData(datos, _id);
     console.log(res);
   
   }
+
+  const renderInfo =()=> {
+
+    if (edicion) {
+      inputTitulo.current.value= item.titulo;
+      inputVolumen.current.value = item.volumen;
+      inputAutor.current.value = item.autor;
+      inputAnno.current.value = item.anno;      
+    }
+
+  };
+
+ 
 
 
   return (
