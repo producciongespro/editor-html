@@ -14,3 +14,15 @@ Content-Type: application/json
     "cuerpo": "<h1>Hola a todos</h1>"
 }
 
+
+### Actualización de artículo
+PUT http://localhost:3500/api/articulos?_id=613bc54c287d0d0358fa9598
+Content-Type: application/json
+
+{
+    "titulo": "Prueba Edicion", 
+    "volumen": "1478888", 
+    "anno": "20 8888821", 
+    "autor": "Pepito 456", 
+    "cuerpo": "<h1>Hola a todos editado</h1> Esto es una actualización"
+}
