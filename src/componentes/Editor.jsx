@@ -14,6 +14,9 @@ let cuerpo;
 
 export default function Editor(props) {
 
+  const edicion= props.edicion;
+  const item= props.item;
+
   const inputTitulo = useRef(null);
   const inputVolumen = useRef(null);
   const inputAutor = useRef(null);
@@ -69,7 +72,7 @@ export default function Editor(props) {
 
       <CKEditor
         editor={ClassicEditor}
-        data=""
+        data={  edicion ? item.cuerpo : ""  }
         onReady={(editor) => {
           // You can store the "editor" and use when it is needed.
           console.log("Editor is ready to use!", editor);

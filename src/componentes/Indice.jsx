@@ -9,7 +9,7 @@ export default function Indice(props) {
             <div 
                 className="col-2 text-center pt-3  alert alert-info" 
                 id={i}
-                data-mode="edit"
+                data-modo="edicion"
                 role="button"
                 onClick={props.handleMostrarDetalle}
             >
@@ -18,7 +18,7 @@ export default function Indice(props) {
             </div>
             <div className="col-2 text-center pt-3  alert alert-info"
                id={i}
-               data-mode="view"
+               data-modo="vista"
                role="button"
                onClick={props.handleMostrarDetalle}
             >
