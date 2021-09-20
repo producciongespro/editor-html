@@ -1,20 +1,32 @@
 export default function Indice(props) {
   const array = props.array;
   console.log("recibidas", array);
-  return (
-    <div className="row">
-      <div className="col-12 list-group">
+  return (    
+      <>
         {array.map((item, i) => (
-          <button
-            key={i}
-            id={i}
-            className="list-group-item list-group-item-action"
-            onClick={props.handleMostrarDetalle}
-          >
-            {item.titulo}
-          </button>
+          <div key={i} className="row">
+            <div className="col-8 alert alert-info">{item.titulo}</div>
+            <div 
+                className="col-2 text-center pt-3  alert alert-info" 
+                id={i}
+                data-mode="edit"
+                role="button"
+                onClick={props.handleMostrarDetalle}
+            >
+               ✏️
+            
+            </div>
+            <div className="col-2 text-center pt-3  alert alert-info"
+               id={i}
+               data-mode="view"
+               role="button"
+               onClick={props.handleMostrarDetalle}
+            >
+            👁️
+            </div>
+          </div>
         ))}
-      </div>
-    </div>
+   </>   
+    
   );
 }
