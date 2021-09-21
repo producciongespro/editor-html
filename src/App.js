@@ -73,7 +73,7 @@ function App() {
             className="btn btn-outline-info"
             onClick={handleMostrarEditor}
           >           
-            Editor
+            📝 Crear nuevo
           </button>
         </div>
       </div>

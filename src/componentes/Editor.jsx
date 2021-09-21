@@ -113,7 +113,7 @@ export default function Editor(props) {
         onChange={(event, editor) => {
           const data = editor.getData();
           //console.log( { event, editor, data } );
-          console.log(data);
+          //console.log(data);
           cuerpo=data;
         }}
         onBlur={(event, editor) => {
