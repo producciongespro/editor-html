@@ -1,4 +1,5 @@
 export default function Indice(props) {
+  const handleMostrarDetalle = props.handleMostrarDetalle;
   const array = props.array;
   console.log("recibidas", array);
   return (    
@@ -11,7 +12,7 @@ export default function Indice(props) {
                 id={i}
                 data-modo="edicion"
                 role="button"
-                onClick={props.handleMostrarDetalle}
+                onClick={handleMostrarDetalle}
             >
                ✏️
             
@@ -20,7 +21,8 @@ export default function Indice(props) {
                id={i}
                data-modo="vista"
                role="button"
-               onClick={props.handleMostrarDetalle}
+               onClick={handleMostrarDetalle}
+               
             >
             👁️
             </div>

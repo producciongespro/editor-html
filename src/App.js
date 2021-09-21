@@ -31,11 +31,15 @@ function App() {
   const handleMostrarDetalle = (e) => {
     const i = e.target.id;
     const modo = e.target.dataset.modo;
-    //console.log("modo", modo);
+    /*
+    console.log("id", i);
+    console.log("modo", modo);
+  */
+
 
     if (modo === "vista") {
       setVistaActual(
-        <Visor item={revistas[i]} handleMostrarIndice={handleMostrarIndice} />
+        <Visor item={revistas[i]} handleMostrarIndice={handleMostrarIndice}  handleMostrarDetalle={handleMostrarDetalle}  />
       );
     }
 
@@ -49,7 +53,7 @@ function App() {
   const handleMostrarIndice = () => {
     console.log("Mostrando indice");
     setVistaActual(
-      <Indice array={revistas} handleMostrarIndice={handleMostrarIndice} />
+      <Indice array={revistas} handleMostrarIndice={handleMostrarIndice} handleMostrarDetalle={handleMostrarDetalle} />
     );
   };
 
