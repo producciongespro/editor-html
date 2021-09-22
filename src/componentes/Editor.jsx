@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
@@ -7,6 +7,7 @@ import * as utils from "../utils/utils";
 
 const URL_API = "http://localhost:3500/api/articulos";
 
+// html del articulo (retorno del editor)
 let cuerpo;
 
 
@@ -14,8 +15,16 @@ let cuerpo;
 
 export default function Editor(props) {  
 
+  const [updated, setUpdated] = useState(true);
+
   let edicion= props.edicion;
   let item= props.item;
+  /*
+  Variable que almacena los últimos cambios guardados
+  con el fin de comparar con data y verificar si hay pendiente por guardar 
+  Si updated== true btn enviar datos no se renderiza
+  */
+  let lastData="";
 
   const inputTitulo = useRef(null);
   const inputVolumen = useRef(null);
@@ -26,6 +35,10 @@ export default function Editor(props) {
   useEffect(() => {
     renderInfo();
   }, []);
+
+  useEffect(() => {
+    console.log("updated", updated);
+  }, [updated]);
 
   const handleSendData = async () => {
     let method;
@@ -54,6 +67,10 @@ export default function Editor(props) {
     const res = await utils.sendData(datos, _id);
     console.log(res);
     item = res.item;
+
+    //Establecer datos actualizados de datos:
+    setUpdated(true);
+    lastData = cuerpo;
   
   }
 
@@ -68,6 +85,12 @@ export default function Editor(props) {
 
   };
 
+  const validarUpdate =(tmpData)=> {
+    if (tmpData != lastData ) {
+      setUpdated(false);     
+    }
+  }
+
  
 
 
@@ -75,11 +98,16 @@ export default function Editor(props) {
     <div className="container">
 
 <div className="row">        
-        <div className="col-12 text-end mt-2 mb-2">
+        
+
+        {
+          !updated &&
+          <div className="col-12 text-end mt-2 mb-2">
           <button 
           onClick={handleSendData}
           className="btn btn-outline-success"> 💾 </button>
-        </div>
+        </div>}
+
       </div>
 
 
@@ -117,12 +145,16 @@ export default function Editor(props) {
           //console.log( { event, editor, data } );
           //console.log(data);
           cuerpo=data;
+          //Validar los datos para activar el btn
+          validarUpdate(data);
+          
         }}
         onBlur={(event, editor) => {
           // console.log( 'Blur.', editor );
         }}
         onFocus={(event, editor) => {
-          // console.log( 'Focus.', editor );
+          // console.log( 'Focus.', editor );         
+        
         }}
       />
     </div>
