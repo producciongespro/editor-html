@@ -5,6 +5,7 @@ const routerArticulos = Router();
 routerArticulos.get("/articulos", ctrArticulos.getArticulos);
 routerArticulos.post ("/articulos", ctrArticulos.setArticulo);
 routerArticulos.put ("/articulos", ctrArticulos.updateArticulo);
+routerArticulos.delete("/articulos", ctrArticulos.deleteArticulo);
 
 
 export default routerArticulos;

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Visor from "./componentes/Visor";
 import Indice from "./componentes/Indice";
 import Editor from "./componentes/Editor";
+import {deleteRecord} from "./utils/utils";
 
 const API_ARTICULOS = "http://localhost:3500/api/articulos";
 
@@ -23,7 +24,7 @@ function App() {
     console.log("revistas cargadas--->", revistas);
     if (revistas) {
       setVistaActual(
-        <Indice array={revistas} handleMostrarDetalle={handleMostrarDetalle} />
+        <Indice array={revistas} handleMostrarDetalle={handleMostrarDetalle}  hadleEliminarArticulo={hadleEliminarArticulo} />
       );
     }
   }, [revistas]);
@@ -53,10 +54,10 @@ function App() {
   const handleMostrarIndice = () => {
     console.log("cargando datos...");
     cargarDatos();
-    
+
     console.log("Mostrando indice");
     setVistaActual(
-      <Indice array={revistas} handleMostrarIndice={handleMostrarIndice} handleMostrarDetalle={handleMostrarDetalle} />
+      <Indice array={revistas} handleMostrarIndice={handleMostrarIndice} handleMostrarDetalle={handleMostrarDetalle} hadleEliminarArticulo={hadleEliminarArticulo} />
     );
   };
 
@@ -64,6 +65,11 @@ function App() {
     console.log("Mostrando editor");
     setVistaActual(<Editor item={null} edicion={null} handleMostrarIndice={handleMostrarIndice} />);
   };
+
+  const hadleEliminarArticulo = async (e)=> {    
+    const res = await deleteRecord (API_ARTICULOS, e.target.id);
+    handleMostrarIndice();
+  }
 
   return (
     <div className="container">

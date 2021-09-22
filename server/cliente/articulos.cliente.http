@@ -26,3 +26,7 @@ Content-Type: application/json
     "autor": "Pepito 456", 
     "cuerpo": "<h1>Hola a todos editado</h1> Esto es una actualización"
 }
+
+### Eliminar registro de articulo
+DELETE http://localhost:3500/api/articulos?_id=613bc54c287d0d0358fa9598
+

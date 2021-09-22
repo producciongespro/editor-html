@@ -27,3 +27,12 @@ export async function updateArticulo (req, res) {
     res.json({isOk: true, item });
 
 }
+
+
+export async function deleteArticulo (req, res) {
+    const { _id } = req.query;
+    const item = await Articulo.findByIdAndDelete(_id);
+    res.json({isOk: true, item });
+
+    
+}
