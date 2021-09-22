@@ -51,6 +51,9 @@ function App() {
   };
 
   const handleMostrarIndice = () => {
+    console.log("cargando datos...");
+    cargarDatos();
+    
     console.log("Mostrando indice");
     setVistaActual(
       <Indice array={revistas} handleMostrarIndice={handleMostrarIndice} handleMostrarDetalle={handleMostrarDetalle} />
@@ -59,7 +62,7 @@ function App() {
 
   const handleMostrarEditor = () => {
     console.log("Mostrando editor");
-    setVistaActual(<Editor item={null} edicion={null} />);
+    setVistaActual(<Editor item={null} edicion={null} handleMostrarIndice={handleMostrarIndice} />);
   };
 
   return (
