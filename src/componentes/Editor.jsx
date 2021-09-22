@@ -14,8 +14,8 @@ let cuerpo;
 
 export default function Editor(props) {  
 
-  const edicion= props.edicion;
-  const item= props.item;
+  let edicion= props.edicion;
+  let item= props.item;
 
   const inputTitulo = useRef(null);
   const inputVolumen = useRef(null);
@@ -34,7 +34,8 @@ export default function Editor(props) {
     if (edicion) {
       method = "PUT"
     } else {
-      method = "POST"
+      method = "POST";
+      edicion= true;
     }
 
     if (item) {
@@ -52,6 +53,7 @@ export default function Editor(props) {
   
     const res = await utils.sendData(datos, _id);
     console.log(res);
+    item = res.item;
   
   }
 

@@ -13,7 +13,7 @@ export async function setArticulo(req, res) {
     await nuevoArticulo.save();
     
 
-    res.json({isOk:true});
+    res.json({isOk:true, item: nuevoArticulo});
 }
 
 
@@ -22,8 +22,8 @@ export async function updateArticulo (req, res) {
     const {titulo, volumen, anno, autor, cuerpo} = req.body;
     //console.log( _id);
     //console.log(titulo, volumen, anno, autor, cuerpo);
-    await Articulo.findByIdAndUpdate( _id, { titulo, volumen, anno, autor, cuerpo } );
-
-    res.json({isOk: true});
+    const item = await Articulo.findByIdAndUpdate( _id, { titulo, volumen, anno, autor, cuerpo } );
+    
+    res.json({isOk: true, item });
 
 }
