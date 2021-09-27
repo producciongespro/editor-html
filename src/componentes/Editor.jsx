@@ -33,7 +33,7 @@ export default function Editor(props) {
   Alamcena el item enviado props en modo edición
   Si es un registro nuevo lo llena en runtime con la informaicón actual
   */  
-  const [item, setItem] = useState(props.item);
+  const item = props.item;
   /*
 
   Variable que almacena los últimos cambios guardados
