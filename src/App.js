@@ -46,7 +46,11 @@ function App() {
 
     if (modo === "edicion") {
       setVistaActual(
-        <Editor item={revistas[i]} edicion={true} handleMostrarIndice={handleMostrarIndice} />
+        //Estados de accion -->  1: insert, 2: update, 3: update new 
+        //Cuando es el modo edicion la acción es un update.
+        // El estado de acción cambia a 3 en tiempo de ejecución ya que es cuando el usuario está actualizando un 
+        //registro recién guardado.
+        <Editor item={revistas[i]} edicion={true}  accion={2} handleMostrarIndice={handleMostrarIndice} />
       );
     }
   };
@@ -63,7 +67,8 @@ function App() {
 
   const handleMostrarEditor = () => {
     console.log("Mostrando editor");
-    setVistaActual(<Editor item={null} edicion={null} handleMostrarIndice={handleMostrarIndice} />);
+    //La acción corresponde a un insert (1) ya que se va a crtear un registro nuevo
+    setVistaActual(<Editor item={null} edicion={false} accion={1} handleMostrarIndice={handleMostrarIndice} />);
   };
 
   const hadleEliminarArticulo = async (e)=> {    

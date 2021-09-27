@@ -10,12 +10,32 @@ const URL_API = "http://localhost:3500/api/articulos";
 // html del articulo (retorno del editor)
 let cuerpo;
 
+/** Variable que almacena el id del registro. En caso de edición la toma del props item. En caso de edición de un isenrt
+ * reciente la toma de la respuesta del servidor * 
+ */
+
+let _id;
+
 export default function Editor(props) {
   const [updated, setUpdated] = useState(true);
 
-  let edicion = props.edicion;
-  let item = props.item;
+  
   /*
+  Alamacena la acción que se debe ejecutar a la hora de guardar el registro
+  //Estados de accion -->  1: insert, 2: update, 3: update new 
+        //Cuando es el modo edicion la acción es un update.
+        // El estado de acción cambia a 3 en tiempo de ejecución ya que es cuando el usuario está actualizando un 
+        //registro recién guardado.
+  */
+  const [accion, setAccion] = useState(props.accion);
+
+  /*
+  Alamcena el item enviado props en modo edición
+  Si es un registro nuevo lo llena en runtime con la informaicón actual
+  */  
+  const [item, setItem] = useState(props.item);
+  /*
+
   Variable que almacena los últimos cambios guardados
   con el fin de comparar con data y verificar si hay pendiente por guardar 
   Si updated== true btn enviar datos no se renderiza
@@ -27,24 +47,29 @@ export default function Editor(props) {
   const inputAutor = useRef(null);
   const inputAnno = useRef(null);
 
-  useEffect(() => {
+  useEffect(() => {    
     renderInfo();
   }, []);
 
-  useEffect(() => {
-    console.log("updated", updated);
-  }, [updated]);
+  
+useEffect(() => {
+  console.log("accion cambiada-->",accion);
+}, [accion]);
 
-  const handleSendData = async () => {
-    let method;
-    let _id;
-
-    if (edicion) {
-      method = "PUT";
-    } else {
+  const handleSendData = async () => {    
+    let method;    
+    //módo insert 
+    //modo 
+    if (accion === 1 )  {
+      //Si edición es false carga el método post y cambia "edición" a true con el fin de 
+      // que en los siguientes guardados los realice en modo "PUT" (update)
       method = "POST";
-      edicion = true;
+      setAccion(3)
     }
+    // modo update
+    if (accion === 2 || accion === 3 ) {      
+      method = "PUT";
+    } 
 
     if (item) {
       _id = item._id;
@@ -57,12 +82,14 @@ export default function Editor(props) {
       volumen: inputVolumen.current.value,
       anno: inputAnno.current.value,
       autor: inputAutor.current.value,
-      cuerpo,
+      cuerpo
     };
 
     const res = await utils.sendData(datos, _id);
     console.log(res);
-    item = res.item;
+    //Se carga el item del servidor para obtener el id y utilizarlo
+    //para el siguiente guardado que es un update
+    _id = res.item._id;
 
     //Establecer datos actualizados de datos:
     setUpdated(true);
@@ -70,7 +97,7 @@ export default function Editor(props) {
   };
 
   const renderInfo = () => {
-    if (edicion) {
+    if (accion === 2) {
       inputTitulo.current.value = item.titulo;
       inputVolumen.current.value = item.volumen;
       inputAutor.current.value = item.autor;
@@ -149,7 +176,8 @@ export default function Editor(props) {
 
       <CKEditor
         editor={ClassicEditor}
-        data={edicion ? item.cuerpo : ""}
+        //Si es un update que viene de listar se asigna el cuerpo del item recibido mecibido mediante props.
+        data={accion === 2 && item.cuerpo}
         onReady={(editor) => {
           // You can store the "editor" and use when it is needed.
           console.log("Editor is ready to use!", editor);
@@ -159,7 +187,7 @@ export default function Editor(props) {
           //console.log( { event, editor, data } );
           //console.log(data);
           cuerpo = data;
-          //Validar los datos para activar el btn
+          //Validar los datos para activar el btn "guardar"
           validarUpdate(data);
         }}
         onBlur={(event, editor) => {
