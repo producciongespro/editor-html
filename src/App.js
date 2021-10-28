@@ -3,15 +3,18 @@ import Visor from "./componentes/Visor";
 import Indice from "./componentes/Indice";
 import Editor from "./componentes/Editor";
 import {deleteRecord} from "./utils/utils";
+import endpoints from "./endpoints";
 
-const API_ARTICULOS = "http://localhost:3500/api/articulos";
 
 function App() {
   const [revistas, setRevistas] = useState(null);
   const [vistaActual, setVistaActual] = useState(null);
 
   const cargarDatos = async () => {
-    let res = await fetch(API_ARTICULOS);
+
+    console.log("endpoints.articulos", endpoints.articulos);
+
+    let res = await fetch(endpoints.articulos);
     res = await res.json();
     setRevistas(res);
   };
@@ -72,7 +75,7 @@ function App() {
   };
 
   const hadleEliminarArticulo = async (e)=> {    
-    const res = await deleteRecord (API_ARTICULOS, e.target.id);
+    const res = await deleteRecord (endpoints.articulos, e.target.id);
     handleMostrarIndice();
   }
 
